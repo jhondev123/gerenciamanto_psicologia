@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            // repensar com calma a necessidade de vincunlar a configuração a um usuário
+            //$table->foreignId('user_id')->constrained();
             $table->string('key');
             $table->text('value');
             $table->text('description')->nullable();
