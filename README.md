@@ -150,3 +150,23 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
 - Dias de atendimento
 - Duração da sessão
 
+## Registros iniciais
+ - Roles
+   - admin
+   - manager
+   - psychologist
+   - patient
+   - secretary
+ - Configurations
+   - session_price
+   - session_price_recurrent
+   - work_hours
+   - work_days
+   - session_duration
+   - IA Suggestions
+ - Report_Templates
+   - avaliação psicológica
+   - laudo psicológico
+   - atestado psicológico
+   - parecer psicológico
+   - relatório psicosocial
