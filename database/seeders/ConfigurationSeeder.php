@@ -41,6 +41,7 @@ class ConfigurationSeeder extends Seeder
             'description' => 'Duração da sessão em minutos',
             'value' => 60,
         ]);
+        //
         /**
          * Booleano para ativar ou desativar as sugestões de IA
          */
