@@ -73,14 +73,80 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
       - deleted_at
     - Sessions
       - id
+      - description
+      - feedback, da para fazer uma nota de 1 a 5 para cada sessão
       - patient_id
       - psychologist_id
-    - Pagamentos
-    - Relatórios
-    - Laudos
-    - Agenda
-    - Prontuários
+      - schedule_id
+      - created_at
+      - updated_at
+      - deleted_at
+    - Configurations
+      - id
+      - psychologist_id
+      - key
+      - value
+      - created_at
+      - updated_at
+      - deleted_at
+      - description
+    - Payments
+      - id
+      - session_price
+      - amount_paid
+      - paid
+      - date
+      - description
+      - session_id
+      - patient_id
+      - psychologist_id
+      - created_at
+      - updated_at
+      - deleted_at
+    - Recurrents
+      - id
+      - description
+      - value
+      - day_of_week
+      - hour
+      - active
+      - psychologist_id
+      - patient_id
+      - created_at
+      - updated_at
+      - deleted_at
+    - MedicalRecords
+      - id
+      - description
+      - patient_id
+      - psychologist_id
+      - created_at
+      - updated_at
+      - deleted_at
+    - Reports
+      - id
+      - description
+      - patient_id
+      - psychologist_id
+      - report_template_id
+      - created_at
+      - updated_at
+      - deleted_at
+    - Report_Templates
+      - id
+      - description
+      - created_at
+      - updated_at
+      - deleted_at
 
 
 ## Features
-- Feedback do paciente dentro das sessões para gerar um gráfico
+- Feedback do paciente dentro das sessões para gerar um gráfico entre as sessões
+
+## Configurações padrões
+- Valor da sessão
+- Valor da sessão para pacientes recorrentes
+- Horário de atendimento
+- Dias de atendimento
+- Duração da sessão
+
