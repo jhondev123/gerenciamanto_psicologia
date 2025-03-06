@@ -83,7 +83,7 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
       - deleted_at
     - Configurations
       - id
-      - psychologist_id
+      - user_id
       - key
       - value
       - created_at

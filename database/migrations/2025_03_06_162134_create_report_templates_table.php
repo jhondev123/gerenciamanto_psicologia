@@ -8,11 +8,18 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * - id
+     * - description
+     * - created_at
+     * - updated_at
+     * - deleted_at
      */
     public function up(): void
     {
         Schema::create('report_templates', function (Blueprint $table) {
             $table->id();
+            $table->string('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

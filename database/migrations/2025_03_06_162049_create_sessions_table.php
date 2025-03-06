@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
+            $table->text("description");
+            $table->tinyText("feedback");
+            $table->foreignId("psychologist_id")->constrained();
+            $table->foreignId("patient_id")->constrained();
+            $table->foreignId("schedule_id")->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -22,6 +28,11 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('sessions', function (Blueprint $table) {
+            $table->dropForeign(['psychologist_id']);
+            $table->dropForeign(['patient_id']);
+            $table->dropForeign(['schedule_id']);
+        });
         Schema::dropIfExists('sessions');
     }
 };

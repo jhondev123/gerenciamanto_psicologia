@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('key');
+            $table->text('value');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +26,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('configurations', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
         Schema::dropIfExists('configurations');
     }
 };
