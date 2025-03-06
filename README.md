@@ -170,3 +170,11 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
    - atestado psicológico
    - parecer psicológico
    - relatório psicosocial
+
+## TODO
+- [ x ] Criar as tabelas
+- [ x ] Criar as migrations
+- [ x ] Criar docker-compose para subir o banco de dados
+- [  ] Criar as seeds
+- [ ] Criar as Models
+- [ ] Criar as factories
