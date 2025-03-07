@@ -18,6 +18,7 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->text('description');
+            $table->date('date');
             $table->foreignId('patient_id')->constrained();
             $table->foreignId('psychologist_id')->constrained();
             $table->foreignId('report_template_id')->constrained();
