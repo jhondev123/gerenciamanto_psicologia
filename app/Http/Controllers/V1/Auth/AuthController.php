@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers\V1\Auth;
 
+use App\Actions\V1\Auth\LoginAction;
+use App\Http\Requests\V1\Auth\LoginRequest;
+use Illuminate\Support\Facades\Auth;
 use Nette\NotImplementedException;
 
 class AuthController
 {
-    public function login()
+    public function __construct(
+        private LoginAction $loginAction
+    )
     {
-        throw new NotImplementedException();
+
+    }
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->only('email', 'password');
+        $token = $this->loginAction->execute($credentials['email'], $credentials['password']);
+        return response()->json(['token' => $token]);
     }
 
     public function register()
