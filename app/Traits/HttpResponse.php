@@ -14,7 +14,7 @@ trait HttpResponse
         string|int $status,
         array|Model|JsonResource|Collection $data = [],
         array $headers = []
-    )
+    ): \Illuminate\Http\JsonResponse
     {
         $res = response()->json([
             'message' => $message,
@@ -32,7 +32,7 @@ trait HttpResponse
         string|int $status,
         array|MessageBag $errors = [],
         array $data = []
-    )
+    ): \Illuminate\Http\JsonResponse
     {
         return response()->json([
             'message' => $message,
