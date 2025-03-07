@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
-            // repensar com calma a necessidade de vincunlar a configuração a um usuário
             //$table->foreignId('user_id')->constrained();
             $table->string('key');
             $table->text('value');
@@ -27,9 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('configurations', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-        });
         Schema::dropIfExists('configurations');
     }
 };
