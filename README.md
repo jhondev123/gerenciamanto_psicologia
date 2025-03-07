@@ -173,8 +173,8 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
 - [ x ] Criar as tabelas
 - [ x ] Criar as migrations
 - [ x ] Criar docker-compose para subir o banco de dados
-- [  ] Criar as seeds
-- [ ] Criar as Models
+- [ x ] Criar as seeds
+- [ X ] Criar as Models
 - [ ] Criar as factories
 - [ ] Configurar Registro de Usuários
 - [ ] Configurar Login
