@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('rg')->unique()->nullable();
             $table->date('birth_date')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

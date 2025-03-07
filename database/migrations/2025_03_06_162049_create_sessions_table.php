@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->text("description");
-            $table->tinyText("feedback");
+            $table->integer("feedback");
             $table->foreignId("psychologist_id")->constrained();
             $table->foreignId("patient_id")->constrained();
             $table->foreignId("schedule_id")->constrained();
