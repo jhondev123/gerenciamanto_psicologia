@@ -17,19 +17,19 @@ class ReportTemplatesSeeder extends Seeder
      */
     public function run(): void
     {
-        ReportTemplate::created([
+        ReportTemplate::create([
             'description' => 'Avaliação psicológica',
         ]);
-        ReportTemplate::created([
+        ReportTemplate::create([
             'description' => 'Laudo Psicológico',
         ]);
-        ReportTemplate::created([
+        ReportTemplate::create([
             'description' => 'Atestado Psicológico',
         ]);
-        ReportTemplate::created([
+        ReportTemplate::create([
             'description' => 'Parecer Psicológico',
         ]);
-        ReportTemplate::created([
+        ReportTemplate::create([
             'description' => 'Relatório Psicosocial',
         ]);
     }
