@@ -176,3 +176,6 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
 - [  ] Criar as seeds
 - [ ] Criar as Models
 - [ ] Criar as factories
+- [ ] Configurar Registro de Usuários
+- [ ] Configurar Login
+- [ ] Configurar Logout
