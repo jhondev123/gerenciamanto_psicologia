@@ -17,7 +17,12 @@ class ScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'date' => $this->faker->date(),
+            'start_time' => $this->faker->time(),
+            'end_time' => $this->faker->time(),
+            'psychologist_id' => \App\Models\Psychologist::factory(),
+            'patient_id' => \App\Models\Patient::factory(),
+
         ];
     }
 }

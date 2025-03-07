@@ -17,7 +17,9 @@ class PsychologistFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'person_id' => \App\Models\Person::factory(),
+            'license_number' => $this->faker->unique()->numerify('##########'),
+            'approach' => $this->faker->word(),
         ];
     }
 }

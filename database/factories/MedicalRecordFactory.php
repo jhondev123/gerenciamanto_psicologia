@@ -17,7 +17,9 @@ class MedicalRecordFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'description' => $this->faker->text(),
+            'patient_id' => \App\Models\Patient::factory(),
+            'psychologist_id' => \App\Models\Psychologist::factory(),
         ];
     }
 }

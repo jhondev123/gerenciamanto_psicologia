@@ -17,7 +17,12 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'session_price' => $this->faker->randomFloat(2, 0, 999999.99),
+            'amount_paid' => $this->faker->randomFloat(2, 0, 999999.99),
+            'paid' => $this->faker->boolean,
+            'date' => $this->faker->date(),
+            'description' => $this->faker->text,
+            'session_id' => \App\Models\Session::factory(),
         ];
     }
 }

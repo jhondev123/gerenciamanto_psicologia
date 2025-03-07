@@ -17,7 +17,11 @@ class ReportFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'date' => $this->faker->date(),
+            'description' => $this->faker->text(),
+            'patient_id' => \App\Models\Patient::factory(),
+            'psychologist_id' => \App\Models\Psychologist::factory(),
+            'report_template_id' => 1,
         ];
     }
 }

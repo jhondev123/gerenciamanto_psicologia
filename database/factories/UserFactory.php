@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Person;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -18,15 +19,16 @@ class UserFactory extends Factory
 
     /**
      * Define the model's default state.
-     *
+     *$table->foreignId('role_id')->constrained('roles', 'id');
+     * $table->foreignId('people_id')->constrained('people', 'id');
      * @return array<string, mixed>
      */
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
+
+            'role_id' => 1,
+            'people_id' => \App\Models\Person::factory(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];

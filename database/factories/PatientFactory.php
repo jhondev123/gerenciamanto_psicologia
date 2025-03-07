@@ -17,7 +17,7 @@ class PatientFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'person_id' => \App\Models\Person::factory(),
         ];
     }
 }

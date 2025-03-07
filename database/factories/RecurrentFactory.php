@@ -17,7 +17,13 @@ class RecurrentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'description' => $this->faker->sentence,
+            'value' => $this->faker->randomFloat(2, 0, 1000),
+            'day_of_week' => $this->faker->numberBetween(0, 6),
+            'hour' => $this->faker->time(),
+            'active' => $this->faker->boolean,
+            'psychologist_id' => \App\Models\Psychologist::factory(),
+            'patient_id' => \App\Models\Patient::factory(),
         ];
     }
 }
