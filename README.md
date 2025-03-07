@@ -98,8 +98,6 @@ Esse projeto vai ser um ERP focado em ajudar psicólogos autonomos
       - date
       - description
       - session_id
-      - patient_id
-      - psychologist_id
       - created_at
       - updated_at
       - deleted_at

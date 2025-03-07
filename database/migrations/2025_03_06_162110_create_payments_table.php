@@ -31,9 +31,7 @@ return new class extends Migration
             $table->boolean('paid')->default(false);
             $table->date('date');
             $table->string('description')->nullable();
-            $table->foreignId('session_id')->constrained()->onDelete('cascade');
-            $table->foreignId('patient_id')->constrained()->onDelete('cascade');
-            $table->foreignId('psychologist_id')->constrained()->onDelete('cascade');
+            $table->foreignId('session_id')->constrained();
             $table->softDeletes();
             $table->timestamps();
         });
