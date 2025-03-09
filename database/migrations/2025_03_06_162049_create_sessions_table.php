@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sessions', function (Blueprint $table) {
+        Schema::create('medical_sessions', function (Blueprint $table) {
             $table->id();
             $table->text("description");
             $table->integer("feedback");
@@ -28,11 +28,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('sessions', function (Blueprint $table) {
+        Schema::table('medical_sessions', function (Blueprint $table) {
             $table->dropForeign(['psychologist_id']);
             $table->dropForeign(['patient_id']);
             $table->dropForeign(['schedule_id']);
         });
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('medical_sessions');
     }
 };

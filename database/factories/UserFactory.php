@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'role_id' => 1,
             'people_id' => \App\Models\Person::factory(),
             'password' => static::$password ??= Hash::make('password'),
+            'email' => $this->faker->unique()->safeEmail,
             'remember_token' => Str::random(10),
         ];
     }

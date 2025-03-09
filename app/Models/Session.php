@@ -9,4 +9,5 @@ class Session extends Model
 {
     /** @use HasFactory<\Database\Factories\SessionFactory> */
     use HasFactory;
+    protected $table = 'medical_sessions';
 }

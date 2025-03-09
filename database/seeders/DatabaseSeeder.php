@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             ConfigurationSeeder::class,
             ReportTemplatesSeeder::class,
+            UserSeeder::class,
             // se tiver em production remover essa seeder
             TestSeeder::class
         ]);
