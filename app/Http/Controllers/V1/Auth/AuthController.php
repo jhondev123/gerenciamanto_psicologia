@@ -19,7 +19,10 @@ class AuthController
     {
         $credentials = $request->only('email', 'password');
         $token = $this->loginAction->execute($credentials['email'], $credentials['password']);
-        return response()->json(['token' => $token]);
+        $user = Auth::user();
+        $user->load(['person','role']);
+
+        return response()->json(['token' => $token, 'token_type' => 'Bearer','user' => $user]);
     }
 
     public function register()

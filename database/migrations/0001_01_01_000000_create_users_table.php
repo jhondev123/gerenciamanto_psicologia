@@ -44,6 +44,7 @@ return new class extends Migration {
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['role_id']);
+            $table->dropForeign(['people_id']);
         });
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
