@@ -17,7 +17,7 @@ class LoginAction
     public function execute(string $email,string $password):string
     {
         if (!Auth::attempt(compact('email', 'password'))) {
-            throw new InvalidLoginException("Usuário ou senha inválidos", 401);
+            throw new InvalidLoginException("Unauthorized", 401);
         }
 
         $user = Auth::user();

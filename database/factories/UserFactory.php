@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Person;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -27,7 +28,7 @@ class UserFactory extends Factory
     {
         return [
 
-            'role_id' => 1,
+            'role_id' => Role::factory(),
             'people_id' => \App\Models\Person::factory(),
             'password' => static::$password ??= Hash::make('password'),
             'email' => $this->faker->unique()->safeEmail,

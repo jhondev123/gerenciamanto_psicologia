@@ -15,14 +15,20 @@ class AuthController
     {
 
     }
+
     public function login(LoginRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-        $token = $this->loginAction->execute($credentials['email'], $credentials['password']);
-        $user = Auth::user();
-        $user->load(['person','role']);
+        try {
+            $credentials = $request->only('email', 'password');
+            $token = $this->loginAction->execute($credentials['email'], $credentials['password']);
+            $user = Auth::user();
+            $user->load(['person', 'role']);
 
-        return response()->json(['token' => $token, 'token_type' => 'Bearer','user' => $user]);
+            return response()->json(['token' => $token, 'token_type' => 'Bearer', 'user' => $user]);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 401);
+        }
     }
 
     public function register()
