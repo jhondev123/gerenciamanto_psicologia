@@ -6,6 +6,7 @@ use App\Actions\V1\Auth\LoginAction;
 use App\Actions\V1\Auth\RegisterAction;
 use App\Http\Requests\V1\Auth\LoginRequest;
 use App\Http\Requests\V1\Auth\RegisterRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Nette\NotImplementedException;
 
@@ -51,9 +52,11 @@ class AuthController
 
     }
 
-    public function me()
+    public function me():JsonResponse
     {
-        throw new NotImplementedException();
+        $user = Auth::user();
+        $user->load(['person', 'role']);
+        return response()->json($user);
 
     }
 }
