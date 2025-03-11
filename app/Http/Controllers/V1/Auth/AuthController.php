@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\V1\Auth;
 
 use App\Actions\V1\Auth\LoginAction;
+use App\Actions\V1\Auth\RegisterAction;
 use App\Http\Requests\V1\Auth\LoginRequest;
+use App\Http\Requests\V1\Auth\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use Nette\NotImplementedException;
 
 class AuthController
 {
     public function __construct(
-        private LoginAction $loginAction
+        private LoginAction $loginAction,
+        private RegisterAction $registerAction,
     )
     {
 
@@ -31,9 +34,14 @@ class AuthController
         }
     }
 
-    public function register()
+    public function register(RegisterRequest $request): \Illuminate\Http\JsonResponse
     {
-        throw new NotImplementedException();
+        try {
+            $user = $this->registerAction->execute($request);
+            return response()->json($user, 201);
+        }catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 401);
+        }
 
     }
 
