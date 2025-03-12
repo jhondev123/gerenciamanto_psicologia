@@ -64,7 +64,6 @@ class RegisterTest extends ApiTestCase
             '09914581099',
             'Valid@123'
         );
-        dd($response->json());
 
         $response->assertStatus(201);
     }
