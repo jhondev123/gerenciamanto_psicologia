@@ -14,5 +14,6 @@ Route::prefix('v1')->group(function () {
         Route::post('/register', [AuthController::class, 'register'])->name('v1.auth.register');
         Route::post('/logout', [AuthController::class, 'logout'])->name('v1.auth.logout');
         Route::post('/me', [AuthController::class, 'me'])->name('v1.auth.me');
+        Route::post('/logout', [AuthController::class, 'logout'])->name('v1.auth.me');
     });
 });
