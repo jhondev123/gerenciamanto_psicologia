@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1\Auth;
 
 use App\Actions\V1\Auth\LoginAction;
 use App\Actions\V1\Auth\RegisterAction;
+use App\Actions\V1\Auth\LogoutAction;
 use App\Http\Requests\V1\Auth\LoginRequest;
 use App\Http\Requests\V1\Auth\RegisterRequest;
 use Illuminate\Http\JsonResponse;
@@ -15,6 +16,7 @@ class AuthController
     public function __construct(
         private LoginAction $loginAction,
         private RegisterAction $registerAction,
+        private LogoutAction $logoutAction,
     )
     {
 
@@ -48,8 +50,12 @@ class AuthController
 
     public function logout()
     {
-        throw new NotImplementedException();
-
+        try {
+            $response = $this->logoutAction->execute(request());
+            return response()->json($response);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 401);
+        }
     }
 
     public function me():JsonResponse
